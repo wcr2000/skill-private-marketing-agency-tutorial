@@ -1,0 +1,1700 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Private Marketing Agency Blueprint</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/reset.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/reveal.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/theme/black.min.css">
+
+  <style>
+    /* ===== BASE OVERRIDES ===== */
+    :root {
+      --bg: #0D1117;
+      --surface: #1E2533;
+      --surface2: #161B22;
+      --border: #2D3748;
+      --violet: #7C3AED;
+      --violet-light: #9F5FFF;
+      --cyan: #06B6D4;
+      --green: #10B981;
+      --amber: #F59E0B;
+      --red: #EF4444;
+      --text: #F1F5F9;
+      --muted: #94A3B8;
+      --code: #A5F3FC;
+    }
+
+    .reveal-viewport {
+      background: var(--bg);
+    }
+
+    .reveal {
+      font-family: 'Sarabun', sans-serif;
+      font-size: 28px;
+      color: var(--text);
+    }
+
+    .reveal .slides section {
+      text-align: left;
+      padding: 40px 60px;
+      height: 100%;
+      box-sizing: border-box;
+    }
+
+    .reveal h1, .reveal h2, .reveal h3, .reveal h4 {
+      font-family: 'Sarabun', sans-serif;
+      color: var(--text);
+      text-transform: none;
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 0.5em;
+    }
+
+    .reveal h1 { font-size: 2.8em; font-weight: 800; }
+    .reveal h2 { font-size: 1.8em; font-weight: 700; }
+    .reveal h3 { font-size: 1.3em; font-weight: 600; }
+    .reveal p  { color: var(--muted); line-height: 1.6; }
+    .reveal ul  { list-style: none; padding: 0; margin: 0; }
+    .reveal ul li { padding: 6px 0; color: var(--text); }
+
+    .reveal a { color: var(--cyan); }
+
+    /* ===== COMPONENTS ===== */
+
+    /* Pill / Badge */
+    .pill {
+      display: inline-block;
+      padding: 4px 14px;
+      border-radius: 999px;
+      font-size: 0.55em;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .pill-violet { background: rgba(124,58,237,0.25); color: #c4b5fd; border: 1px solid rgba(124,58,237,0.4); }
+    .pill-cyan   { background: rgba(6,182,212,0.2);   color: #67e8f9; border: 1px solid rgba(6,182,212,0.35); }
+    .pill-green  { background: rgba(16,185,129,0.2);  color: #6ee7b7; border: 1px solid rgba(16,185,129,0.35); }
+    .pill-amber  { background: rgba(245,158,11,0.2);  color: #fcd34d; border: 1px solid rgba(245,158,11,0.35); }
+
+    /* Card */
+    .card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px 24px;
+    }
+    .card-violet { border-color: rgba(124,58,237,0.5); }
+    .card-cyan   { border-color: rgba(6,182,212,0.5); }
+    .card-green  { border-color: rgba(16,185,129,0.5); }
+    .card-amber  { border-color: rgba(245,158,11,0.5); }
+
+    /* Section header full-bleed */
+    .section-header {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 60px 80px !important;
+      background: linear-gradient(135deg, #0D1117 60%, #1a0a2e);
+      border-left: 6px solid var(--violet);
+    }
+    .section-header .section-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1em;
+      color: var(--violet-light);
+      margin-bottom: 10px;
+      letter-spacing: 0.1em;
+    }
+    .section-header h2 {
+      font-size: 2.4em;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+    .section-header p {
+      font-size: 0.9em;
+    }
+
+    /* Section header amber variant */
+    .section-header-amber {
+      border-left-color: var(--amber);
+      background: linear-gradient(135deg, #0D1117 60%, #1a1000);
+    }
+    .section-header-amber .section-num { color: var(--amber); }
+
+    /* Checklist */
+    .checklist { list-style: none; padding: 0; margin: 0; }
+    .checklist li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 5px 0;
+      color: var(--text);
+    }
+    .checklist li::before {
+      content: '✓';
+      color: var(--green);
+      font-weight: 700;
+      font-size: 1em;
+      flex-shrink: 0;
+      margin-top: 2px;
+    }
+    .checklist li.cross::before {
+      content: '✗';
+      color: var(--red);
+    }
+
+    /* Bullet with dot */
+    .bullets { list-style: none; padding: 0; margin: 0; }
+    .bullets li {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 6px 0;
+      color: var(--text);
+    }
+    .bullets li::before {
+      content: '—';
+      color: var(--cyan);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
+
+    /* Code pill */
+    .code-pill {
+      font-family: 'JetBrains Mono', monospace;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--code);
+      padding: 6px 16px;
+      border-radius: 8px;
+      display: inline-block;
+      font-size: 0.75em;
+    }
+    .code-pill-large {
+      font-size: 1em;
+      padding: 12px 28px;
+      border-radius: 12px;
+      border-color: var(--violet);
+      background: rgba(124,58,237,0.15);
+    }
+
+    /* Lesson badge */
+    .lesson-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.6em;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+    }
+
+    /* Grid layouts */
+    .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+    .grid-3 { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; }
+    .grid-4 { display: grid; grid-template-columns: 1fr 1fr 1fr 1fr; gap: 14px; }
+
+    /* ===== TIMELINE STRIP ===== */
+    .timeline {
+      display: flex;
+      align-items: flex-start;
+      gap: 0;
+      position: relative;
+      padding-top: 20px;
+    }
+    .timeline-item {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+    }
+    .timeline-item:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 22px;
+      left: 50%;
+      right: -50%;
+      height: 2px;
+      background: linear-gradient(90deg, var(--violet), var(--cyan));
+      z-index: 0;
+    }
+    .timeline-circle {
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'JetBrains Mono', monospace;
+      font-weight: 700;
+      font-size: 0.65em;
+      color: white;
+      position: relative;
+      z-index: 1;
+      flex-shrink: 0;
+    }
+    .timeline-label {
+      font-size: 0.45em;
+      color: var(--text);
+      font-weight: 600;
+      text-align: center;
+      margin-top: 8px;
+      line-height: 1.3;
+    }
+    .timeline-time {
+      font-size: 0.38em;
+      color: var(--muted);
+      text-align: center;
+      margin-top: 4px;
+      font-family: 'JetBrains Mono', monospace;
+    }
+
+    /* ===== FLOW DIAGRAM ===== */
+    .flow {
+      display: flex;
+      align-items: center;
+      gap: 0;
+    }
+    .flow-box {
+      flex: 1;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 12px;
+      text-align: center;
+    }
+    .flow-box .flow-icon {
+      font-size: 1.4em;
+      display: block;
+      margin-bottom: 6px;
+    }
+    .flow-box .flow-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.55em;
+      color: var(--code);
+      font-weight: 600;
+      margin-bottom: 4px;
+      display: block;
+    }
+    .flow-box .flow-desc {
+      font-size: 0.42em;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+    .flow-arrow {
+      font-size: 1.2em;
+      color: var(--violet);
+      padding: 0 8px;
+      flex-shrink: 0;
+    }
+
+    /* ===== MCP DIAGRAM ===== */
+    .mcp-diagram {
+      display: grid;
+      grid-template-columns: 1fr auto 1fr;
+      grid-template-rows: 1fr 1fr 1fr;
+      gap: 12px;
+      align-items: center;
+    }
+    .mcp-center {
+      grid-column: 2;
+      grid-row: 1 / 4;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      border-radius: 12px;
+      padding: 20px 16px;
+      text-align: center;
+      color: white;
+      font-weight: 700;
+      font-size: 0.6em;
+    }
+    .mcp-service {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 12px 16px;
+      font-size: 0.5em;
+      font-weight: 600;
+    }
+    .mcp-arrow-right { color: var(--cyan); font-size: 1.2em; text-align: center; }
+    .mcp-arrow-left  { color: var(--violet); font-size: 1.2em; text-align: center; }
+
+    /* ===== LIMITS TABLE ===== */
+    .limits-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.65em;
+    }
+    .limits-table th {
+      padding: 12px 16px;
+      font-weight: 700;
+      font-size: 1em;
+    }
+    .limits-table th.can {
+      background: rgba(16,185,129,0.2);
+      color: #6ee7b7;
+      border-radius: 8px 8px 0 0;
+      border: 1px solid rgba(16,185,129,0.3);
+    }
+    .limits-table th.cannot {
+      background: rgba(245,158,11,0.2);
+      color: #fcd34d;
+      border-radius: 8px 8px 0 0;
+      border: 1px solid rgba(245,158,11,0.3);
+    }
+    .limits-table td {
+      padding: 10px 16px;
+      border-bottom: 1px solid var(--border);
+    }
+    .limits-table tr:nth-child(odd) td { background: var(--surface); }
+    .limits-table tr:nth-child(even) td { background: var(--surface2); }
+    .limits-table td.can-col { color: #6ee7b7; }
+    .limits-table td.cant-col { color: #fcd34d; }
+    .limits-table td:first-child { border-right: 1px solid var(--border); }
+
+    /* ===== STEP BOX ===== */
+    .step-box {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 16px 20px;
+    }
+    .step-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.4em;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      flex-shrink: 0;
+      line-height: 1;
+    }
+    .step-content h4 { margin: 0 0 4px 0; font-size: 0.7em; color: var(--text); }
+    .step-content p  { margin: 0; font-size: 0.55em; color: var(--muted); }
+
+    /* ===== SCATTERED TOOLS ===== */
+    .scattered {
+      position: relative;
+      height: 260px;
+    }
+    .scattered-pill {
+      position: absolute;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 8px 16px;
+      font-size: 0.5em;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    /* ===== TECH BADGE ===== */
+    .tech-badge {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .tech-badge .tech-name {
+      font-weight: 700;
+      font-size: 0.7em;
+      color: var(--text);
+    }
+    .tech-badge .tech-desc {
+      font-size: 0.5em;
+      color: var(--muted);
+      line-height: 1.4;
+    }
+
+    /* ===== HERO TITLE ===== */
+    .hero-glow {
+      position: absolute;
+      top: -60px;
+      right: -80px;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(124,58,237,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero-glow-cyan {
+      position: absolute;
+      bottom: -80px;
+      right: 100px;
+      width: 350px;
+      height: 350px;
+      background: radial-gradient(circle, rgba(6,182,212,0.1) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    /* ===== CTA BUTTON ===== */
+    .cta-button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      color: white;
+      font-family: 'Sarabun', sans-serif;
+      font-size: 0.65em;
+      font-weight: 700;
+      padding: 14px 32px;
+      border-radius: 12px;
+      margin-top: 16px;
+      letter-spacing: 0.01em;
+    }
+
+    /* Utilities */
+    .text-violet { color: var(--violet-light); }
+    .text-cyan   { color: var(--cyan); }
+    .text-green  { color: var(--green); }
+    .text-amber  { color: var(--amber); }
+    .text-muted  { color: var(--muted); }
+    .text-code   { font-family: 'JetBrains Mono', monospace; color: var(--code); }
+    .fw-800 { font-weight: 800; }
+    .fw-700 { font-weight: 700; }
+    .mt-8  { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mt-24 { margin-top: 24px; }
+    .mt-32 { margin-top: 32px; }
+    .small { font-size: 0.55em; }
+    .xsmall { font-size: 0.45em; }
+    .center { text-align: center; }
+    .full-height { height: 100%; }
+    .flex-center { display: flex; align-items: center; justify-content: center; }
+    .divider {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 20px 0;
+    }
+
+    /* Slide number */
+    .reveal .slide-number {
+      background: transparent;
+      color: var(--muted);
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 14px;
+    }
+
+    /* Controls */
+    .reveal .controls { color: var(--violet); }
+    .reveal .progress { color: var(--violet); }
+
+    /* Tagline bar */
+    .tagline-bar {
+      background: linear-gradient(90deg, var(--violet), var(--cyan));
+      height: 4px;
+      border-radius: 2px;
+      margin: 16px 0;
+      width: 80px;
+    }
+
+    /* Callout box */
+    .callout {
+      background: rgba(124,58,237,0.12);
+      border: 1px solid rgba(124,58,237,0.35);
+      border-radius: 10px;
+      padding: 14px 20px;
+      font-size: 0.7em;
+      color: #c4b5fd;
+    }
+    .callout-cyan {
+      background: rgba(6,182,212,0.1);
+      border-color: rgba(6,182,212,0.3);
+      color: #67e8f9;
+    }
+    .callout-green {
+      background: rgba(16,185,129,0.1);
+      border-color: rgba(16,185,129,0.3);
+      color: #6ee7b7;
+    }
+    .callout-amber {
+      background: rgba(245,158,11,0.1);
+      border-color: rgba(245,158,11,0.3);
+      color: #fcd34d;
+    }
+
+    /* Pipeline pills row */
+    .pipeline {
+      display: flex;
+      align-items: center;
+      gap: 0;
+      flex-wrap: wrap;
+    }
+    .pipeline-step {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      font-size: 0.5em;
+      font-weight: 600;
+      text-align: center;
+      min-width: 80px;
+    }
+    .pipeline-arrow {
+      color: var(--violet);
+      font-size: 0.9em;
+      padding: 0 4px;
+      flex-shrink: 0;
+    }
+
+    /* Lesson card */
+    .lesson-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+    .lesson-card .lc-badge {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.8em;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .lesson-card .lc-title {
+      font-size: 0.75em;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .lesson-card .lc-item {
+      font-size: 0.48em;
+      color: var(--muted);
+      padding: 3px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 6px;
+    }
+    .lesson-card .lc-item::before {
+      content: '›';
+      color: var(--cyan);
+      flex-shrink: 0;
+    }
+
+    /* Two-zone comparison */
+    .zone-green {
+      background: rgba(16,185,129,0.08);
+      border: 1px solid rgba(16,185,129,0.3);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .zone-amber {
+      background: rgba(245,158,11,0.08);
+      border: 1px solid rgba(245,158,11,0.3);
+      border-radius: 10px;
+      padding: 18px 20px;
+    }
+    .zone-header {
+      font-size: 0.6em;
+      font-weight: 700;
+      margin-bottom: 12px;
+    }
+    .zone-item {
+      font-size: 0.5em;
+      padding: 4px 0;
+      display: flex;
+      gap: 8px;
+      align-items: flex-start;
+    }
+    .zone-item-green::before { content: '✓'; color: var(--green); }
+    .zone-item-amber::before { content: '✗'; color: var(--amber); }
+
+    /* Adaptation card */
+    .adapt-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      height: 100%;
+    }
+    .adapt-num {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2em;
+      font-weight: 700;
+      background: linear-gradient(135deg, var(--violet), var(--cyan));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      line-height: 1;
+      margin-bottom: 8px;
+    }
+    .adapt-title {
+      font-size: 0.7em;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 10px;
+    }
+    .adapt-item {
+      font-size: 0.48em;
+      color: var(--muted);
+      padding: 4px 0;
+      display: flex;
+      gap: 6px;
+    }
+    .adapt-item::before {
+      content: '—';
+      color: var(--violet-light);
+      flex-shrink: 0;
+    }
+
+    /* Prep column */
+    .prep-col {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px 18px;
+      height: 100%;
+    }
+    .prep-col .prep-header {
+      font-size: 0.6em;
+      font-weight: 700;
+      margin-bottom: 10px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid var(--border);
+    }
+    .prep-col .prep-item {
+      font-size: 0.47em;
+      color: var(--muted);
+      padding: 4px 0;
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    .prep-col .prep-item .dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--cyan);
+      flex-shrink: 0;
+      margin-top: 5px;
+    }
+    .prep-col .prep-item .dot-x {
+      color: var(--red);
+      font-size: 0.9em;
+      flex-shrink: 0;
+    }
+  </style>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+
+<!-- =====================================================
+     SECTION 1: ปัญหา (5 slides)
+===================================================== -->
+
+<!-- Slide 1: Title Hero -->
+<section>
+  <section style="position:relative; overflow:hidden;">
+    <div class="hero-glow"></div>
+    <div class="hero-glow-cyan"></div>
+
+    <div style="padding-top: 60px;">
+      <div class="pill pill-violet" style="margin-bottom: 24px;">Claude Code Course &nbsp;·&nbsp; 8 บทเรียน &nbsp;·&nbsp; ~2.5 ชั่วโมง</div>
+
+      <h1 style="font-size: 2.4em; line-height: 1.1; margin-bottom: 0;">Private Marketing<br>Agency Blueprint</h1>
+
+      <div class="tagline-bar"></div>
+
+      <p style="font-size: 0.9em; color: var(--muted); max-width: 600px; margin-bottom: 32px;">
+        สร้างระบบ AI Marketing ของคุณเองในวันเดียว
+      </p>
+
+      <div style="display:flex; gap:16px; flex-wrap:wrap;">
+        <div class="pill pill-cyan">ไม่ต้องเขียนโค้ด</div>
+        <div class="pill pill-green">ไม่ต้องจ้างทีม</div>
+        <div class="pill pill-violet">ผลลัพธ์จริง ใช้งานได้ทันที</div>
+      </div>
+
+      <div style="position:absolute; bottom: 40px; right: 60px; text-align:right;">
+        <div class="xsmall text-muted">Claude Code &nbsp;·&nbsp; OpenRouter &nbsp;·&nbsp; NocoDB &nbsp;·&nbsp; HeyGen &nbsp;·&nbsp; Vercel</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 2: Pain Points -->
+  <section>
+    <h2>คุณใช้เวลากี่ชั่วโมงต่อสัปดาห์<br>กับการตลาด?</h2>
+    <div class="tagline-bar"></div>
+
+    <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 16px;">
+      <div class="card card-violet">
+        <div class="small fw-700" style="color:var(--text); margin-bottom: 6px;">เขียน caption ทุกวัน</div>
+        <div class="xsmall text-muted">ซ้ำแล้วซ้ำเล่า ไม่รู้ว่าหัวข้อไหนโดน ต้องนึกเองทุกครั้ง</div>
+      </div>
+      <div class="card card-violet">
+        <div class="small fw-700" style="color:var(--text); margin-bottom: 6px;">ออกแบบกราฟิก</div>
+        <div class="xsmall text-muted">ทั้งที่ไม่ได้เป็นดีไซเนอร์ ใช้ Canva วนไปวนมา</div>
+      </div>
+      <div class="card card-violet">
+        <div class="small fw-700" style="color:var(--text); margin-bottom: 6px;">วางแผนคอนเทนต์</div>
+        <div class="xsmall text-muted">ไม่มีระบบ วางแผนแบบ ad hoc ขาดความต่อเนื่อง</div>
+      </div>
+      <div class="card card-violet">
+        <div class="small fw-700" style="color:var(--text); margin-bottom: 6px;">ทำทุกอย่างคนเดียว</div>
+        <div class="xsmall text-muted">วิดีโอ แลนดิ้งเพจ เว็บไซต์ งานการตลาดไม่มีจบ</div>
+      </div>
+    </div>
+
+    <div class="callout mt-32">
+      นี่คือปัญหาของเจ้าของ SME และ solopreneur ทุกคน ไม่ใช่แค่คุณ
+    </div>
+  </section>
+
+  <!-- Slide 3: Tools don't connect -->
+  <section>
+    <h2>เครื่องมือ AI มีเยอะ<br><span class="text-violet">แต่ไม่คุยกัน</span></h2>
+    <div class="tagline-bar"></div>
+
+    <div class="scattered" style="margin-top: 20px;">
+      <div class="scattered-pill" style="top: 10px; left: 50px;">ChatGPT</div>
+      <div class="scattered-pill" style="top: 60px; left: 280px; color: var(--text);">Canva</div>
+      <div class="scattered-pill" style="top: 20px; left: 540px;">CapCut</div>
+      <div class="scattered-pill" style="top: 120px; left: 120px;">Notion</div>
+      <div class="scattered-pill" style="top: 130px; left: 400px; color: var(--text);">Buffer</div>
+      <div class="scattered-pill" style="top: 80px; left: 720px;">Midjourney</div>
+      <div class="scattered-pill" style="top: 180px; left: 60px; color: var(--text);">Google Docs</div>
+      <div class="scattered-pill" style="top: 170px; left: 540px;">HeyGen</div>
+      <div class="scattered-pill" style="top: 200px; left: 780px; color: var(--text);">Airtable</div>
+
+      <div style="position:absolute; top: 95px; left: 330px; font-size: 2.5em; font-weight: 800; color: var(--amber); opacity: 0.8;">?</div>
+    </div>
+
+    <div class="callout-amber callout mt-8">
+      แอปนึงสำหรับเขียน &nbsp;·&nbsp; แอปนึงสำหรับรูป &nbsp;·&nbsp; แอปนึงสำหรับวิดีโอ&nbsp; — ไม่มีอะไรเชื่อมกัน
+    </div>
+  </section>
+
+  <!-- Slide 4: What to automate -->
+  <section>
+    <h2>ไม่ใช่ทุกงานที่ควร Automate</h2>
+    <div class="tagline-bar"></div>
+
+    <div class="grid-2" style="margin-top: 16px;">
+      <div style="background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.3); border-radius: 10px; padding: 20px;">
+        <div class="small fw-700" style="color: #fca5a5; margin-bottom: 12px;">Automate ยาก</div>
+        <ul class="bullets">
+          <li class="small" style="color: var(--muted);">ต้องตัดสินใจเชิงกลยุทธ์</li>
+          <li class="small" style="color: var(--muted);">เปลี่ยนแปลงทุกครั้ง</li>
+          <li class="small" style="color: var(--muted);">ต้องใช้ความสัมพันธ์กับลูกค้า</li>
+          <li class="small" style="color: var(--muted);">ต้องใช้ประสบการณ์เฉพาะทาง</li>
+        </ul>
+      </div>
+      <div class="zone-green">
+        <div class="small fw-700" style="color: var(--green); margin-bottom: 12px;">Automate ได้ดีมาก</div>
+        <ul class="bullets">
+          <li class="small" style="color: var(--text);">ทำซ้ำเดิมทุกครั้ง</li>
+          <li class="small" style="color: var(--text);">มีโครงสร้างชัดเจน</li>
+          <li class="small" style="color: var(--text);">Production มากกว่า Judgement</li>
+          <li class="small" style="color: var(--text);">ใช้ข้อมูลตายตัวเป็น input</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="callout mt-24" style="text-align:center;">
+      การตลาดคอนเทนต์ = perfect case สำหรับ automation
+    </div>
+  </section>
+
+  <!-- Slide 5: Vision -->
+  <section style="display:flex; flex-direction:column; justify-content:center; height:100%;">
+    <p class="xsmall text-muted" style="margin-bottom: 16px; text-transform: uppercase; letter-spacing: 0.1em;">จินตนาการว่า...</p>
+    <h2 style="font-size: 1.6em; line-height: 1.4; color: var(--text); max-width: 800px;">
+      คุณพิมพ์คำสั่งเดียว<br>
+      <span class="text-violet">ระบบ AI วิจัย วางแผน เขียน ออกแบบ ทำวิดีโอ และ deploy เว็บ</span><br>
+      โดยอัตโนมัติ
+    </h2>
+    <div class="tagline-bar" style="width: 120px; margin: 20px 0;"></div>
+    <p style="font-size: 0.75em; color: var(--muted);">นั่นคือสิ่งที่คุณจะสร้างในคอร์สนี้ — โดยใช้แบรนด์ของคุณเอง สำหรับธุรกิจของคุณเอง</p>
+  </section>
+</section>
+
+<!-- =====================================================
+     SECTION 2: Solution Overview (5 slides)
+===================================================== -->
+
+<section>
+  <!-- Slide 6: Section header -->
+  <section>
+    <div class="section-header">
+      <div class="section-num">ส่วนที่ 01</div>
+      <h2>ระบบที่คุณจะสร้าง</h2>
+      <p>Private Marketing Agency ใน Claude Code</p>
+    </div>
+  </section>
+
+  <!-- Slide 7: What is Claude Code -->
+  <section>
+    <h2>Claude Code คืออะไร</h2>
+    <div class="tagline-bar"></div>
+    <p class="small" style="margin-bottom: 20px;">ผู้ช่วย AI ที่ทำงานได้จริงในเครื่องของคุณ — ไม่ใช่แค่ chatbot</p>
+
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="card">
+        <div class="small fw-700" style="margin-bottom:4px;">อ่านและสร้างไฟล์ได้จริง</div>
+        <div class="xsmall text-muted">รู้ว่าโปรเจกต์คุณมีไฟล์อะไร ทำงานกับโฟลเดอร์ได้โดยตรง</div>
+      </div>
+      <div class="card">
+        <div class="small fw-700" style="margin-bottom:4px;">เชื่อมต่อกับระบบภายนอกได้</div>
+        <div class="xsmall text-muted">ต่อกับ database, video platform, web hosting — ผ่านสิ่งที่เรียกว่า MCP</div>
+      </div>
+      <div class="card">
+        <div class="small fw-700" style="margin-bottom:4px;">ไม่ต้องเขียนโค้ดเอง</div>
+        <div class="xsmall text-muted">คุณอธิบายสิ่งที่ต้องการ Claude เป็นคนสร้างทุกอย่าง</div>
+      </div>
+    </div>
+
+    <div class="callout-cyan callout mt-24">
+      คุณเปิด folder ใน Claude Code แล้วพิมพ์คำสั่ง — Claude ทำงานให้
+    </div>
+  </section>
+
+  <!-- Slide 8: Pipeline overview -->
+  <section>
+    <h2>Private Marketing Agency<br>= 8 Agents ทำงานต่อกัน</h2>
+    <div class="tagline-bar"></div>
+
+    <div class="pipeline mt-16" style="flex-wrap:nowrap; overflow-x: auto;">
+      <div class="pipeline-step" style="border-color: var(--violet);">
+        <div style="font-size: 1.4em; margin-bottom: 4px;">&#x1F50D;</div>
+        <div class="text-cyan">วิจัย</div>
+      </div>
+      <div class="pipeline-arrow">&#8594;</div>
+      <div class="pipeline-step">
+        <div style="font-size: 1.4em; margin-bottom: 4px;">&#x1F4C5;</div>
+        <div class="text-cyan">วางแผน</div>
+      </div>
+      <div class="pipeline-arrow">&#8594;</div>
+      <div class="pipeline-step">
+        <div style="font-size: 1.4em; margin-bottom: 4px;">&#x270F;&#xFE0F;</div>
+        <div class="text-cyan">เขียน</div>
+      </div>
+      <div class="pipeline-arrow">&#8594;</div>
+      <div class="pipeline-step">
+        <div style="font-size: 1.4em; margin-bottom: 4px;">&#x1F5BC;&#xFE0F;</div>
+        <div class="text-cyan">ออกแบบ</div>
+      </div>
+      <div class="pipeline-arrow">&#8594;</div>
+      <div class="pipeline-step">
+        <div style="font-size: 1.4em; margin-bottom: 4px;">&#x1F3AC;</div>
+        <div class="text-cyan">วิดีโอ</div>
+      </div>
+      <div class="pipeline-arrow">&#8594;</div>
+      <div class="pipeline-step">
+        <div style="font-size: 1.4em; margin-bottom: 4px;">&#x1F310;</div>
+        <div class="text-cyan">เว็บ</div>
+      </div>
+      <div class="pipeline-arrow">&#8594;</div>
+      <div class="pipeline-step">
+        <div style="font-size: 1.4em; margin-bottom: 4px;">&#x1F4E4;</div>
+        <div class="text-cyan">เผยแพร่</div>
+      </div>
+    </div>
+
+    <p class="small mt-24 text-muted">ทั้งหมดทำงานอยู่ใน Claude Code ของคุณ ต่อกันเป็น pipeline เดียว</p>
+    <p class="small text-muted">แต่ละขั้นตอนรู้จัก <span class="text-violet fw-700">brand</span> ของคุณ และส่งต่อ output ให้ขั้นตอนถัดไป</p>
+  </section>
+
+  <!-- Slide 9: Tech Stack -->
+  <section>
+    <h2>เครื่องมือที่ใช้ในคอร์สนี้</h2>
+    <div class="tagline-bar"></div>
+
+    <div class="grid-2" style="margin-top: 16px; gap: 14px;">
+      <div>
+        <div class="xsmall text-muted fw-700" style="letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;">Core</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div class="tech-badge" style="border-color: var(--violet);">
+            <div class="tech-name">Claude Code</div>
+            <div class="tech-desc">AI conductor — รู้จักโปรเจกต์ รันคำสั่ง เชื่อมทุกอย่างเข้าด้วยกัน</div>
+          </div>
+          <div class="tech-badge" style="border-color: var(--cyan);">
+            <div class="tech-name">OpenRouter</div>
+            <div class="tech-desc">Gateway สำหรับ AI models — สร้างรูป, ค้นหา model ใหม่ๆ</div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="xsmall text-muted fw-700" style="letter-spacing:0.08em; text-transform:uppercase; margin-bottom:10px;">Integrations (MCP)</div>
+        <div style="display:flex; flex-direction:column; gap:10px;">
+          <div class="tech-badge">
+            <div class="tech-name">NocoDB</div>
+            <div class="tech-desc">Database สำหรับ content calendar — จัดการ 20-30 รายการต่อเดือน</div>
+          </div>
+          <div class="tech-badge">
+            <div class="tech-name">HeyGen</div>
+            <div class="tech-desc">AI avatar video — พิมพ์สคริปต์ ได้วิดีโอพูดจริง</div>
+          </div>
+          <div class="tech-badge">
+            <div class="tech-name">Vercel</div>
+            <div class="tech-desc">Web hosting — deploy landing page ขึ้น internet ใน 1 คำสั่ง</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="xsmall text-muted mt-16">ทุกอย่างตั้งค่าระหว่างเรียน ไม่ต้องเตรียมล่วงหน้า</p>
+  </section>
+
+  <!-- Slide 10: Deliverables -->
+  <section>
+    <h2>ผลลัพธ์ที่จับต้องได้<br>เมื่อจบ 2.5 ชั่วโมง</h2>
+    <div class="tagline-bar"></div>
+
+    <div class="grid-2" style="margin-top: 16px;">
+      <ul class="checklist">
+        <li class="small">โฟลเดอร์โปรเจกต์ที่ Claude รู้จักแบรนด์คุณทุก session</li>
+        <li class="small">Brand Guidelines ที่ agents ทุกตัวอ่าน</li>
+        <li class="small">Content Calendar ใน NocoDB (20–30 รายการ)</li>
+        <li class="small">บทความ, caption, video script เสียงเหมือนคุณ</li>
+      </ul>
+      <ul class="checklist">
+        <li class="small">ภาพกราฟิกที่ตรงกับสไตล์แบรนด์</li>
+        <li class="small">วิดีโอ AI Avatar ที่พูดสคริปต์คุณ</li>
+        <li class="small">Landing page ที่ deploy ขึ้น internet จริง</li>
+        <li class="small">คำสั่ง /content-engine รันทั้ง pipeline ด้วยคีย์เดียว</li>
+      </ul>
+    </div>
+
+    <div class="callout-green callout mt-24">
+      ทุกชิ้นเป็นของแบรนด์คุณ ใช้งานได้จริงทันทีหลังจบคอร์ส
+    </div>
+  </section>
+</section>
+
+<!-- =====================================================
+     SECTION 3: 8 Lessons (6 slides)
+===================================================== -->
+
+<section>
+  <!-- Slide 11: Section header -->
+  <section>
+    <div class="section-header">
+      <div class="section-num">ส่วนที่ 02</div>
+      <h2>8 บทเรียน<br>สร้างทีละชิ้น</h2>
+      <p>แต่ละบทเรียนผลิต output จริง ที่บทถัดไปใช้ต่อ</p>
+    </div>
+  </section>
+
+  <!-- Slide 12: Timeline overview -->
+  <section>
+    <h2>ภาพรวม 8 บทเรียน</h2>
+    <div class="tagline-bar"></div>
+
+    <div class="timeline mt-24">
+      <div class="timeline-item">
+        <div class="timeline-circle">01</div>
+        <div class="timeline-label">Brand<br>Context</div>
+        <div class="timeline-time">20 min</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-circle">02</div>
+        <div class="timeline-label">Researcher<br>Agent</div>
+        <div class="timeline-time">20 min</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-circle">03</div>
+        <div class="timeline-label">Content<br>Calendar</div>
+        <div class="timeline-time">20 min</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-circle">04</div>
+        <div class="timeline-label">Content<br>Writer</div>
+        <div class="timeline-time">15 min</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-circle">05</div>
+        <div class="timeline-label">Content<br>Designer</div>
+        <div class="timeline-time">20 min</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-circle">06</div>
+        <div class="timeline-label">Video<br>Maker</div>
+        <div class="timeline-time">20 min</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-circle">07</div>
+        <div class="timeline-label">Landing<br>Page</div>
+        <div class="timeline-time">20 min</div>
+      </div>
+      <div class="timeline-item">
+        <div class="timeline-circle">08</div>
+        <div class="timeline-label">Publisher<br>+ Wrap</div>
+        <div class="timeline-time">15 min</div>
+      </div>
+    </div>
+
+    <div style="text-align:right; margin-top:32px;">
+      <span class="pill pill-violet">รวม ~2.5 ชั่วโมง</span>
+    </div>
+  </section>
+
+  <!-- Slide 13: Lessons 1-2 -->
+  <section>
+    <h2>Lessons 1–2</h2>
+    <div class="tagline-bar"></div>
+    <div class="grid-2 mt-16">
+      <div class="lesson-card">
+        <div class="lc-badge">01</div>
+        <div class="lc-title">Brand Context</div>
+        <div class="lc-item">สร้าง CLAUDE.md — briefing ถาวรสำหรับทุก session</div>
+        <div class="lc-item">ตั้งค่า OpenRouter plugin — gateway สำหรับ AI models</div>
+        <div class="lc-item">สร้าง brand-guidelines.md ด้วย 6 คำถามกุญแจ</div>
+        <div class="lc-item">สร้างคำสั่ง /brand</div>
+        <hr class="divider">
+        <div class="xsmall text-muted">Output: CLAUDE.md, brand/brand-guidelines.md, /brand command</div>
+      </div>
+      <div class="lesson-card">
+        <div class="lc-badge">02</div>
+        <div class="lc-title">Researcher Agent</div>
+        <div class="lc-item">สร้าง SKILL.md สำหรับ content-researcher</div>
+        <div class="lc-item">ค้นหา trending topics ล่าสุด (30 วัน)</div>
+        <div class="lc-item">วิเคราะห์ competitor content และ audience questions</div>
+        <div class="lc-item">สร้างคำสั่ง /research</div>
+        <hr class="divider">
+        <div class="xsmall text-muted">Output: .claude/skills/content-researcher/SKILL.md, research/ folder</div>
+      </div>
+    </div>
+    <div class="callout-cyan callout mt-16">ทุกบทเรียนผลิตไฟล์จริง — ไม่ใช่แค่ความรู้ที่หายไปหลังปิดหน้าต่าง</div>
+  </section>
+
+  <!-- Slide 14: Lessons 3-4 -->
+  <section>
+    <h2>Lessons 3–4</h2>
+    <div class="tagline-bar"></div>
+    <div class="grid-2 mt-16">
+      <div class="lesson-card">
+        <div class="lc-badge">03</div>
+        <div class="lc-title">Content Calendar</div>
+        <div class="lc-item">ตั้งค่า NocoDB MCP — ต่อ Claude กับ database</div>
+        <div class="lc-item">สร้าง Content Calendar table (7 fields)</div>
+        <div class="lc-item">Generate 20–30 รายการสำหรับเดือนถัดไป</div>
+        <div class="lc-item">รายการกระจายหลาย platform และ format</div>
+        <hr class="divider">
+        <div class="xsmall text-muted">Output: NocoDB table พร้อม 20+ entries ครอบทุก pillar</div>
+      </div>
+      <div class="lesson-card">
+        <div class="lc-badge">04</div>
+        <div class="lc-title">Content Writer</div>
+        <div class="lc-item">สร้าง SKILL.md สำหรับ content-writer</div>
+        <div class="lc-item">เขียน social post ในเสียงของแบรนด์</div>
+        <div class="lc-item">เขียน article 800–1500 คำ</div>
+        <div class="lc-item">เขียน video script ที่พูดได้จริง</div>
+        <hr class="divider">
+        <div class="xsmall text-muted">Output: 3+ ไฟล์ใน content/ folder, NocoDB status = Drafted</div>
+      </div>
+    </div>
+    <div class="callout-cyan callout mt-16">Key: เนื้อหาต้องฟังดูเหมือนคุณ ไม่ใช่ generic AI marketing copy</div>
+  </section>
+
+  <!-- Slide 15: Lessons 5-6 -->
+  <section>
+    <h2>Lessons 5–6</h2>
+    <div class="tagline-bar"></div>
+    <div class="grid-2 mt-16">
+      <div class="lesson-card">
+        <div class="lc-badge">05</div>
+        <div class="lc-title">Content Designer</div>
+        <div class="lc-item">สร้าง SKILL.md สำหรับ content-designer</div>
+        <div class="lc-item">Generate รูปที่ตรงสีและสไตล์แบรนด์</div>
+        <div class="lc-item">ใช้ OpenRouter image generation (GPT-image model)</div>
+        <div class="lc-item">Aspect ratio ถูก platform: 1:1, 9:16, 16:9</div>
+        <hr class="divider">
+        <div class="xsmall text-muted">Output: 2+ รูปใน designs/ folder, NocoDB status = Designed</div>
+      </div>
+      <div class="lesson-card">
+        <div class="lc-badge">06</div>
+        <div class="lc-title">Video Maker</div>
+        <div class="lc-item">ตั้งค่า HeyGen MCP — ต่อกับ AI avatar platform</div>
+        <div class="lc-item">เลือก avatar และ voice ที่เหมาะกับแบรนด์</div>
+        <div class="lc-item">สร้าง SKILL.md สำหรับ video-maker</div>
+        <div class="lc-item">Generate วิดีโอ (render 2–5 นาที)</div>
+        <hr class="divider">
+        <div class="xsmall text-muted">Output: วิดีโอ AI avatar พูด script ของคุณ 1 ชิ้น</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 16: Lessons 7-8 -->
+  <section>
+    <h2>Lessons 7–8</h2>
+    <div class="tagline-bar"></div>
+    <div class="grid-2 mt-16">
+      <div class="lesson-card">
+        <div class="lc-badge">07</div>
+        <div class="lc-title">Landing Page</div>
+        <div class="lc-item">ตั้งค่า Vercel MCP — ต่อกับ web hosting</div>
+        <div class="lc-item">Claude สร้าง landing page HTML + CSS ให้</div>
+        <div class="lc-item">ใช้สี typography และ content จาก brand guidelines</div>
+        <div class="lc-item">Deploy ขึ้น internet — ได้ URL *.vercel.app จริง</div>
+        <hr class="divider">
+        <div class="xsmall text-muted">Output: landing page live บน internet ทดสอบบนมือถือได้</div>
+      </div>
+      <div class="lesson-card">
+        <div class="lc-badge">08</div>
+        <div class="lc-title">Publisher + Wrap-up</div>
+        <div class="lc-item">สร้าง content-publisher skill (format per platform)</div>
+        <div class="lc-item">สร้าง /content-engine master command</div>
+        <div class="lc-item">รัน full pipeline ครั้งแรก: research → plan → write → design → format</div>
+        <div class="lc-item">เรียนรู้ 3 แนวทางปรับใช้ต่อ</div>
+        <hr class="divider">
+        <div class="xsmall text-muted">Output: /content-engine command พร้อมใช้งาน</div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- =====================================================
+     SECTION 4: Core Concepts (6 slides)
+===================================================== -->
+
+<section>
+  <!-- Slide 17: Section header -->
+  <section>
+    <div class="section-header">
+      <div class="section-num">ส่วนที่ 03</div>
+      <h2>แนวคิดหลัก<br>ที่คุณจะเข้าใจ</h2>
+      <p>ไม่ใช่แค่ใช้เครื่องมือ — แต่เข้าใจว่ามันทำงานอย่างไร</p>
+    </div>
+  </section>
+
+  <!-- Slide 18: Core Pattern -->
+  <section>
+    <h2>Pattern ที่ใช้ซ้ำได้ทุกระบบ</h2>
+    <div class="tagline-bar"></div>
+
+    <div class="flow mt-24">
+      <div class="flow-box" style="border-color: var(--violet);">
+        <span class="flow-icon">&#x1F4CB;</span>
+        <span class="flow-title">Brand Context</span>
+        <span class="flow-desc">CLAUDE.md + brand-guidelines.md<br>ทุก agent อ่านจากที่เดียวกัน</span>
+      </div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-box" style="border-color: var(--cyan);">
+        <span class="flow-icon">&#x1F4DD;</span>
+        <span class="flow-title">Skills</span>
+        <span class="flow-desc">SKILL.md ต่อหนึ่งงาน<br>บอกว่าต้องการงานแบบไหน</span>
+      </div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-box" style="border-color: var(--green);">
+        <span class="flow-icon">&#x1F517;</span>
+        <span class="flow-title">MCPs</span>
+        <span class="flow-desc">เชื่อมกับระบบภายนอก<br>NocoDB, HeyGen, Vercel</span>
+      </div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-box" style="border-color: var(--amber);">
+        <span class="flow-icon">&#x26A1;</span>
+        <span class="flow-title">Slash Commands</span>
+        <span class="flow-desc">กด / ครั้งเดียว<br>รัน workflow ทั้งหมด</span>
+      </div>
+    </div>
+
+    <div class="callout mt-32">
+      เรียนรู้ pattern นี้ครั้งเดียว — สร้างระบบ AI ได้ไม่จำกัด
+    </div>
+  </section>
+
+  <!-- Slide 19: CLAUDE.md -->
+  <section>
+    <h2>CLAUDE.md</h2>
+    <div class="tagline-bar"></div>
+    <p class="small text-muted" style="margin-bottom: 20px;">บริบทถาวรที่ Claude อ่านทุก session อัตโนมัติ</p>
+
+    <div class="grid-2">
+      <div class="card" style="font-family: 'JetBrains Mono', monospace; font-size: 0.42em; color: var(--code); line-height: 1.7;">
+        <div style="color: var(--muted); margin-bottom: 8px;"># marketing-agency/CLAUDE.md</div>
+        <div style="color: #c4b5fd;"># โปรเจกต์นี้คือ Private Marketing Agency</div>
+        <div></div>
+        <div style="color: var(--muted);">## บริบทธุรกิจ</div>
+        <div>แบรนด์: [ชื่อแบรนด์คุณ]</div>
+        <div>สิ่งที่ขาย: [สินค้า/บริการ]</div>
+        <div>กลุ่มเป้าหมาย: [ลูกค้าคุณ]</div>
+        <div></div>
+        <div style="color: var(--muted);">## ไฟล์สำคัญ</div>
+        <div>brand/brand-guidelines.md</div>
+        <div>.claude/skills/</div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:14px;">
+        <div class="card card-violet">
+          <div class="small fw-700" style="margin-bottom:4px;">ไม่ต้องอธิบายโปรเจกต์ใหม่ทุกครั้ง</div>
+          <div class="xsmall text-muted">Claude จำบริบทธุรกิจของคุณข้ามทุก session</div>
+        </div>
+        <div class="card card-violet">
+          <div class="small fw-700" style="margin-bottom:4px;">ทุก agent อ่าน briefing เดียวกัน</div>
+          <div class="xsmall text-muted">researcher, writer, designer — รู้จักแบรนด์คุณเท่ากัน</div>
+        </div>
+        <div class="card card-violet">
+          <div class="small fw-700" style="margin-bottom:4px;">เหมือน SOP ที่พนักงานใหม่ต้องอ่าน</div>
+          <div class="xsmall text-muted">เขียนครั้งเดียว ใช้ได้ตลอด แก้ไขได้ตลอด</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 20: Skills -->
+  <section>
+    <h2>Skills</h2>
+    <div class="tagline-bar"></div>
+    <p class="small text-muted" style="margin-bottom: 20px;">สอน Claude ว่าคุณต้องการงานแบบไหน</p>
+
+    <div class="callout-cyan callout" style="margin-bottom: 20px; font-size: 0.75em;">
+      เหมือน SOP ของพนักงาน — เขียนครั้งเดียว ใช้ซ้ำได้เสมอ พร้อม context ของแบรนด์คุณ
+    </div>
+
+    <div style="display:flex; flex-direction:column; gap:12px;">
+      <div style="display:flex; align-items:center; gap:16px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 20px;">
+        <div class="code-pill">.claude/skills/content-researcher/SKILL.md</div>
+        <div class="small text-muted">&#8594; รู้ว่าต้องหาข้อมูลจากไหน ออกแบบไว้สำหรับ niche ของคุณ</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 20px;">
+        <div class="code-pill">.claude/skills/content-writer/SKILL.md</div>
+        <div class="small text-muted">&#8594; รู้ว่าต้องเขียนสไตล์ไหน เสียงแบรนด์ไหน</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 20px;">
+        <div class="code-pill">.claude/skills/video-maker/SKILL.md</div>
+        <div class="small text-muted">&#8594; รู้ว่าต้องใช้ avatar ไหน voice ไหน format ไหน</div>
+      </div>
+      <div style="display:flex; align-items:center; gap:16px; background:var(--surface); border:1px solid var(--border); border-radius:10px; padding:14px 20px;">
+        <div class="code-pill">.claude/skills/content-designer/SKILL.md</div>
+        <div class="small text-muted">&#8594; รู้สี typography และ style direction ของแบรนด์คุณ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 21: MCPs -->
+  <section>
+    <h2>MCPs — Model Context Protocol</h2>
+    <div class="tagline-bar"></div>
+    <p class="small text-muted" style="margin-bottom: 24px;">ให้ Claude เชื่อมกับระบบภายนอก ทำงานกับโลกภายนอกได้</p>
+
+    <div class="mcp-diagram" style="height: 260px;">
+      <!-- Row 1: NocoDB -->
+      <div class="mcp-service" style="border-color: var(--green);">
+        <div class="small fw-700" style="color:var(--green); margin-bottom:4px;">NocoDB</div>
+        <div class="xsmall text-muted">เพิ่ม/อ่าน/แก้ไข<br>rows ใน database</div>
+      </div>
+      <div class="mcp-arrow-right">&#x21C4;</div>
+      <!-- Center: Claude -->
+      <div class="mcp-center" style="grid-column:2; grid-row:1/4;">
+        <div style="font-size:1.6em; margin-bottom:6px;">&#x1F916;</div>
+        <div>Claude<br>Code</div>
+      </div>
+
+      <!-- Row 2: HeyGen -->
+      <div class="mcp-service" style="border-color: var(--violet);">
+        <div class="small fw-700" style="color:var(--violet-light); margin-bottom:4px;">HeyGen</div>
+        <div class="xsmall text-muted">สร้างวิดีโอ<br>AI avatar</div>
+      </div>
+      <div class="mcp-arrow-right">&#x21C4;</div>
+
+      <!-- Right column -->
+      <div></div>
+
+      <!-- Row 3: Vercel -->
+      <div class="mcp-service" style="border-color: var(--cyan);">
+        <div class="small fw-700" style="color:var(--cyan); margin-bottom:4px;">Vercel</div>
+        <div class="xsmall text-muted">Deploy เว็บ<br>ขึ้น internet</div>
+      </div>
+      <div class="mcp-arrow-right">&#x21C4;</div>
+      <div></div>
+    </div>
+
+    <div class="callout mt-16 xsmall">
+      ไม่มี MCP = Claude รู้แค่ไฟล์ในเครื่อง &nbsp;|&nbsp; มี MCP = Claude ทำงานกับโลกภายนอกได้
+    </div>
+  </section>
+
+  <!-- Slide 22: Slash Commands -->
+  <section>
+    <h2>Slash Commands</h2>
+    <div class="tagline-bar"></div>
+    <p class="small text-muted" style="margin-bottom: 24px;">พิมพ์ / ครั้งเดียว — รัน workflow ที่ซับซ้อนทั้งหมด</p>
+
+    <div style="display:flex; flex-direction:column; gap:16px;">
+      <div style="display:flex; align-items:center; gap:20px;">
+        <div class="code-pill code-pill-large">/brand</div>
+        <div>
+          <div class="small fw-700" style="margin-bottom:2px;">ถามและอัปเดต brand guidelines</div>
+          <div class="xsmall text-muted">เมื่อแบรนด์คุณเปลี่ยน Claude จะถามคำถามและอัปเดตไฟล์</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:20px;">
+        <div class="code-pill code-pill-large">/research</div>
+        <div>
+          <div class="small fw-700" style="margin-bottom:2px;">วิจัยหัวข้อสำหรับ content pillar ที่เลือก</div>
+          <div class="xsmall text-muted">หา trending topics, competitor angles, audience questions</div>
+        </div>
+      </div>
+      <div style="display:flex; align-items:center; gap:20px;">
+        <div class="code-pill code-pill-large">/content-engine</div>
+        <div>
+          <div class="small fw-700" style="margin-bottom:2px;">รัน pipeline ทั้งหมด</div>
+          <div class="xsmall text-muted">research &#8594; calendar &#8594; write &#8594; design &#8594; format — ครบในคำสั่งเดียว</div>
+        </div>
+      </div>
+    </div>
+  </section>
+</section>
+
+<!-- =====================================================
+     SECTION 5: Adaptations (4 slides)
+===================================================== -->
+
+<section>
+  <!-- Slide 23: Section header -->
+  <section>
+    <div class="section-header">
+      <div class="section-num">ส่วนที่ 04</div>
+      <h2>3 สิ่งที่คุณ<br>สามารถทำต่อได้</h2>
+      <p>บทเรียนที่ 8 สอนการปรับระบบนี้สำหรับงานจริง</p>
+    </div>
+  </section>
+
+  <!-- Slide 24: Adaptation 1 -->
+  <section>
+    <div class="pill pill-violet" style="margin-bottom: 16px;">Adaptation 01</div>
+    <h2>ระบบ Onboarding ลูกค้า</h2>
+    <div class="tagline-bar"></div>
+    <p class="small text-muted" style="margin-bottom: 24px;">สำหรับ Freelancer, Agency, Consultant</p>
+
+    <div style="display:flex; flex-direction:column; gap:14px;">
+      <div class="step-box">
+        <div class="step-num">1.</div>
+        <div class="step-content">
+          <h4>คัดลอกโฟลเดอร์ marketing-agency ทั้งหมด</h4>
+          <p>สร้างโฟลเดอร์ใหม่ต่อลูกค้า 1 ราย โครงสร้างทุกอย่างเหมือนกัน</p>
+        </div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2.</div>
+        <div class="step-content">
+          <h4>เปลี่ยนแค่ brand-guidelines.md</h4>
+          <p>ใส่ข้อมูลแบรนด์ลูกค้า — ทุก agent จะทำงานตาม brief ใหม่ทันที</p>
+        </div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3.</div>
+        <div class="step-content">
+          <h4>รัน /content-engine</h4>
+          <p>ได้ content calendar 1 เดือนสำหรับลูกค้าราย 1 คน พร้อม draft ทันที</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="callout-green callout mt-16">สร้างระบบครั้งเดียว — ใช้ได้ทุกลูกค้า</div>
+  </section>
+
+  <!-- Slide 25: Adaptations 2 & 3 -->
+  <section>
+    <h2>Adaptations 2 & 3</h2>
+    <div class="tagline-bar"></div>
+
+    <div class="grid-2 mt-16">
+      <div class="adapt-card">
+        <div class="adapt-num">02</div>
+        <div class="adapt-title">Product Launch Campaign</div>
+        <div class="adapt-item">ปรับ content-calendar skill ให้รับ launch date</div>
+        <div class="adapt-item">Generate teaser &#8594; announcement &#8594; follow-up sequence</div>
+        <div class="adapt-item">Writer สร้างเนื้อหา launch-specific ทุกชิ้นอัตโนมัติ</div>
+        <div class="adapt-item">Designer สร้างรูปธีม launch สอดคล้องกัน</div>
+      </div>
+      <div class="adapt-card">
+        <div class="adapt-num">03</div>
+        <div class="adapt-title">Seasonal Campaign</div>
+        <div class="adapt-item">วิจัย seasonal trends ล่วงหน้าหลายเดือน</div>
+        <div class="adapt-item">Calendar เต็มไปด้วย timely content hooks</div>
+        <div class="adapt-item">Writer และ Designer สร้าง content เป็น batch</div>
+        <div class="adapt-item">คอนเทนต์พร้อมก่อน season จริง</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 26: Pattern repeatable -->
+  <section style="display:flex; flex-direction:column; justify-content:center; height:100%;">
+    <h2>Pattern เดิม ใช้ได้ทุกโปรเจกต์</h2>
+    <div class="tagline-bar"></div>
+
+    <div class="flow mt-24" style="margin-bottom: 32px;">
+      <div class="flow-box">
+        <span class="flow-title">CLAUDE.md</span>
+        <span class="flow-desc">บริบทถาวร</span>
+      </div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-box">
+        <span class="flow-title">Skills</span>
+        <span class="flow-desc">วิธีทำงาน</span>
+      </div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-box">
+        <span class="flow-title">MCPs</span>
+        <span class="flow-desc">ระบบนอก</span>
+      </div>
+      <div class="flow-arrow">&#8594;</div>
+      <div class="flow-box">
+        <span class="flow-title">Commands</span>
+        <span class="flow-desc">Trigger</span>
+      </div>
+    </div>
+
+    <p class="small text-muted">คุณสร้างระบบนี้แล้ว 1 ระบบ ระบบถัดไปจะใช้เวลาครึ่งหนึ่ง เพราะรู้ pattern แล้ว</p>
+  </section>
+</section>
+
+<!-- =====================================================
+     SECTION 6: Honest Limits (2 slides)
+===================================================== -->
+
+<section>
+  <!-- Slide 27: Section header -->
+  <section>
+    <div class="section-header section-header-amber">
+      <div class="section-num">ส่วนที่ 05</div>
+      <h2>สิ่งที่ระบบนี้<br>ยังทำไม่ได้</h2>
+      <p>พูดตรงๆ เพื่อให้คุณรู้ว่ากำลังลงทุนอะไร</p>
+    </div>
+  </section>
+
+  <!-- Slide 28: Limits table -->
+  <section>
+    <h2>ความจริงที่ควรรู้ก่อนเริ่ม</h2>
+    <div class="tagline-bar"></div>
+
+    <table class="limits-table mt-24">
+      <thead>
+        <tr>
+          <th class="can" style="width:50%;">สิ่งที่ระบบทำได้</th>
+          <th class="cannot" style="width:50%;">สิ่งที่ยังต้องทำเอง</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="can-col">วิจัย, วางแผน, เขียน, ออกแบบ, ทำวิดีโอ</td>
+          <td class="cant-col">ตรวจและอนุมัติก่อนโพสต์</td>
+        </tr>
+        <tr>
+          <td class="can-col">สร้าง landing page และ deploy</td>
+          <td class="cant-col">โพสต์จริงลงแพลตฟอร์ม (copy-paste)</td>
+        </tr>
+        <tr>
+          <td class="can-col">Format content สำหรับแต่ละ platform</td>
+          <td class="cant-col">เชื่อมต่อโดยตรงกับ social media API</td>
+        </tr>
+        <tr>
+          <td class="can-col">สร้าง content calendar ล่วงหน้า 1 เดือน</td>
+          <td class="cant-col">วิเคราะห์ performance หลังโพสต์</td>
+        </tr>
+        <tr>
+          <td class="can-col">รัน pipeline ทั้งหมดด้วยคำสั่งเดียว</td>
+          <td class="cant-col">A/B testing และ analytics dashboard</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div class="callout-amber callout mt-20">
+      ระบบนี้จัดการ production work — คุณจัดการ judgement calls
+    </div>
+  </section>
+</section>
+
+<!-- =====================================================
+     SECTION 7: Who & CTA (4 slides)
+===================================================== -->
+
+<section>
+  <!-- Slide 29: Who it's for -->
+  <section>
+    <h2>คอร์สนี้เหมาะกับคุณถ้า...</h2>
+    <div class="tagline-bar"></div>
+
+    <div class="grid-2 mt-16">
+      <div class="zone-green">
+        <div class="zone-header text-green">เหมาะมาก</div>
+        <div class="zone-item zone-item-green">เจ้าของ SME ที่ทำการตลาดเอง</div>
+        <div class="zone-item zone-item-green">Solopreneur ที่อยากได้ output มากขึ้น</div>
+        <div class="zone-item zone-item-green">Marketing manager ที่ต้องการขยายผล</div>
+        <div class="zone-item zone-item-green">อยากเข้าใจ Claude Code จากการสร้างจริง</div>
+        <div class="zone-item zone-item-green">มีแบรนด์หรือธุรกิจที่ต้องการ content</div>
+      </div>
+      <div class="zone-amber">
+        <div class="zone-header text-amber">อาจไม่เหมาะ</div>
+        <div class="zone-item zone-item-amber">คาดหวัง fully automated ทันที</div>
+        <div class="zone-item zone-item-amber">ต้องการ multi-user team access</div>
+        <div class="zone-item zone-item-amber">ต้องการ analytics dashboard พร้อมใช้</div>
+        <div class="zone-item zone-item-amber">ไม่มี Claude Code ติดตั้ง</div>
+        <div class="zone-item zone-item-amber">ไม่มีแบรนด์หรือธุรกิจในใจ</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 30: What to prepare -->
+  <section>
+    <h2>สิ่งที่ต้องเตรียม</h2>
+    <div class="tagline-bar"></div>
+
+    <div class="grid-3 mt-16">
+      <div class="prep-col" style="border-color: var(--green);">
+        <div class="prep-header text-green">ต้องมีก่อนเริ่ม</div>
+        <div class="prep-item">
+          <span class="dot"></span>Claude Code ติดตั้งในเครื่อง
+        </div>
+        <div class="prep-item">
+          <span class="dot"></span>แบรนด์หรือธุรกิจที่อยากทำ marketing
+        </div>
+        <div class="prep-item">
+          <span class="dot"></span>เวลา ~2.5 ชั่วโมง (ทำในวันเดียว)
+        </div>
+      </div>
+      <div class="prep-col">
+        <div class="prep-header text-cyan">ตั้งค่าระหว่างเรียน</div>
+        <div class="prep-item">
+          <span class="dot"></span>OpenRouter account (Lesson 1)
+        </div>
+        <div class="prep-item">
+          <span class="dot"></span>NocoDB account (Lesson 3)
+        </div>
+        <div class="prep-item">
+          <span class="dot"></span>HeyGen account (Lesson 6)
+        </div>
+        <div class="prep-item">
+          <span class="dot"></span>Vercel account (Lesson 7)
+        </div>
+      </div>
+      <div class="prep-col" style="border-color: rgba(239,68,68,0.3);">
+        <div class="prep-header" style="color: #fca5a5;">ไม่ต้องมี</div>
+        <div class="prep-item">
+          <span class="dot-x">&#10005;</span>ประสบการณ์เขียนโค้ด
+        </div>
+        <div class="prep-item">
+          <span class="dot-x">&#10005;</span>ทักษะดีไซน์หรือทำวิดีโอ
+        </div>
+        <div class="prep-item">
+          <span class="dot-x">&#10005;</span>ความรู้เรื่อง git, npm, terminal
+        </div>
+        <div class="prep-item">
+          <span class="dot-x">&#10005;</span>ทีมหรือพนักงาน
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Slide 31: How to start -->
+  <section>
+    <h2>วิธีเริ่มเรียน</h2>
+    <div class="tagline-bar"></div>
+
+    <div style="display:flex; flex-direction:column; gap:14px; margin-top:16px; margin-bottom:24px;">
+      <div class="step-box">
+        <div class="step-num">1.</div>
+        <div class="step-content">
+          <h4>เปิดโฟลเดอร์นี้ใน Claude Code</h4>
+          <p>ไปที่ File &#8594; Open Folder &#8594; เลือกโฟลเดอร์ marketing-agency-tutorial</p>
+        </div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">2.</div>
+        <div class="step-content">
+          <h4>พิมพ์คำสั่งด้านล่างในช่อง chat</h4>
+          <p>Claude จะอ่าน lesson file และกลายเป็นครูผู้สอนทันที</p>
+        </div>
+      </div>
+      <div class="step-box">
+        <div class="step-num">3.</div>
+        <div class="step-content">
+          <h4>ตอบคำถามและทำตามที่ Claude แนะนำ</h4>
+          <p>คุณไม่ได้อ่านเอกสาร — คุณกำลังสร้างระบบจริงสำหรับธุรกิจของคุณ</p>
+        </div>
+      </div>
+    </div>
+
+    <div style="text-align:center;">
+      <div class="code-pill code-pill-large" style="font-size:1.2em; padding: 18px 40px;">Start Lesson 1</div>
+    </div>
+  </section>
+
+  <!-- Slide 32: Closing CTA -->
+  <section style="position:relative; overflow:hidden;">
+    <div class="hero-glow"></div>
+    <div class="hero-glow-cyan"></div>
+
+    <div style="display:flex; flex-direction:column; justify-content:center; height:100%; text-align:center; align-items:center;">
+      <div class="pill pill-violet" style="margin-bottom: 24px;">Claude Code Course</div>
+
+      <h1 style="font-size: 2em; line-height: 1.1; margin-bottom: 8px;">
+        Private Marketing<br>Agency Blueprint
+      </h1>
+
+      <div class="tagline-bar" style="width:80px; margin: 16px auto;"></div>
+
+      <p style="font-size: 0.75em; color: var(--muted); margin-bottom: 32px; max-width: 600px; text-align: center;">
+        8 บทเรียน &nbsp;·&nbsp; ~2.5 ชั่วโมง &nbsp;·&nbsp; ผลลัพธ์จริงสำหรับธุรกิจของคุณ
+      </p>
+
+      <div style="display:flex; flex-direction:column; gap:10px; margin-bottom:32px; text-align:left; max-width:480px;">
+        <div class="small" style="display:flex; gap:10px; align-items:flex-start;">
+          <span class="text-green fw-700">&#10003;</span>
+          <span>ระบบ AI marketing ที่ทำงานได้จริงสำหรับแบรนด์คุณ</span>
+        </div>
+        <div class="small" style="display:flex; gap:10px; align-items:flex-start;">
+          <span class="text-green fw-700">&#10003;</span>
+          <span>ไม่ต้องเขียนโค้ด ไม่ต้องจ้างทีม</span>
+        </div>
+        <div class="small" style="display:flex; gap:10px; align-items:flex-start;">
+          <span class="text-green fw-700">&#10003;</span>
+          <span>Pattern ที่นำไปสร้างระบบต่อไปได้เอง</span>
+        </div>
+      </div>
+
+      <div class="cta-button">
+        เปิดโฟลเดอร์ใน Claude Code แล้วพิมพ์ "Start Lesson 1"
+      </div>
+
+      <div class="xsmall text-muted mt-32">
+        Claude Code &nbsp;·&nbsp; OpenRouter &nbsp;·&nbsp; NocoDB &nbsp;·&nbsp; HeyGen &nbsp;·&nbsp; Vercel
+      </div>
+    </div>
+  </section>
+</section>
+
+</div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.0/reveal.min.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    backgroundTransition: 'fade',
+    progress: true,
+    controls: true,
+    controlsLayout: 'bottom-right',
+    slideNumber: 'c/t',
+    center: false,
+    width: 1280,
+    height: 720,
+    margin: 0.04,
+    plugins: []
+  });
+</script>
+</body>
+</html>
